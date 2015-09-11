@@ -1,0 +1,4 @@
+.idea/*
+elasticsearch-grails-plugin.iml
+.gradle/*
+build/*
