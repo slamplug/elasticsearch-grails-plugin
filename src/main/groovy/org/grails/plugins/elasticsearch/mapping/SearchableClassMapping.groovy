@@ -82,7 +82,7 @@ class SearchableClassMapping {
     }
 
     String calculateIndexName() {
-        String name = domainClass.grailsApplication?.config?.elasticSearch?.index?.name ?: domainClass.packageName
+        String name = domainClass.getApplication()?.config?.elasticSearch?.index?.name ?: domainClass.packageName
         if (name == null || name.length() == 0) {
             // index name must be lowercase (org.elasticsearch.indices.InvalidIndexNameException)
             name = domainClass.getPropertyName()

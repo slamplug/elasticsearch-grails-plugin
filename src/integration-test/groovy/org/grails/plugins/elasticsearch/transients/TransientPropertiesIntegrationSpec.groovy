@@ -1,6 +1,8 @@
 package org.grails.plugins.elasticsearch.transients
 
-import grails.test.spock.IntegrationSpec
+import grails.test.mixin.integration.Integration
+import spock.lang.Specification
+import grails.transaction.Rollback
 import org.grails.plugins.elasticsearch.ElasticSearchAdminService
 import org.grails.plugins.elasticsearch.ElasticSearchService
 import org.grails.plugins.elasticsearch.mapping.SearchableClassMappingConfigurator
@@ -12,7 +14,9 @@ import test.transients.Palette
 /**
  * Created by @marcos-carceles on 29/01/15.
  */
-class TransientPropertiesIntegrationSpec extends IntegrationSpec {
+@Integration
+@Rollback
+class TransientPropertiesSpecification extends Specification {
 
     def grailsApplication
     ElasticSearchService elasticSearchService

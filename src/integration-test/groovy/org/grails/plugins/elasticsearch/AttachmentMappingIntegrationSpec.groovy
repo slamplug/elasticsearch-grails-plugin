@@ -1,7 +1,9 @@
 package org.grails.plugins.elasticsearch
 
 import grails.converters.JSON
-import grails.test.spock.IntegrationSpec
+import grails.test.mixin.integration.Integration
+import spock.lang.Specification
+import grails.transaction.Rollback
 import grails.util.GrailsNameUtils
 import org.grails.core.DefaultGrailsDomainClass
 import grails.core.GrailsApplication
@@ -24,7 +26,9 @@ import org.elasticsearch.search.sort.SortBuilders
 import org.elasticsearch.search.sort.SortOrder
 import test.*
 
-class AttachmentMappingIntegrationSpec extends IntegrationSpec {
+@Integration
+@Rollback
+class AttachmentMappingSpecification extends Specification {
 
     ElasticSearchService elasticSearchService
     ElasticSearchAdminService elasticSearchAdminService

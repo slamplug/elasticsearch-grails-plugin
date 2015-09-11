@@ -1,7 +1,9 @@
 package org.grails.plugins.elasticsearch
 
 import grails.converters.JSON
-import grails.test.spock.IntegrationSpec
+import grails.test.mixin.integration.Integration
+import spock.lang.Specification
+import grails.transaction.Rollback
 import grails.util.GrailsNameUtils
 import grails.core.GrailsApplication
 import grails.core.GrailsDomainClass
@@ -29,7 +31,9 @@ import org.grails.core.DefaultGrailsDomainClass
 import test.*
 import test.custom.id.Toy
 
-class ElasticSearchServiceIntegrationSpec extends IntegrationSpec {
+@Integration
+@Rollback
+class ElasticSearchServiceSpecification extends Specification {
 
     ElasticSearchService elasticSearchService
     ElasticSearchAdminService elasticSearchAdminService

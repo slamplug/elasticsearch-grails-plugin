@@ -38,12 +38,14 @@ ext {
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
+def String graisDsVer = "4.0.4.RELEASE"
+
 
 repositories {
-    //grailsCentral()
     mavenLocal()
     mavenCentral()
     maven { url "https://repo.grails.org/grails/core" }
+    maven { url "http://repo.spring.io/release" }
 }
 
 dependencyManagement {
@@ -85,18 +87,12 @@ dependencies {
 
     provided 'com.spatial4j:spatial4j:0.4.1'
 
-    provided (['org.grails:grails-datastore-gorm-plugin-support:3.1.1.RELEASE',
-        'org.grails:grails-datastore-gorm:3.1.1.RELEASE',
-        'org.grails:grails-datastore-core:3.1.1.RELEASE',
-        'org.grails:grails-datastore-web:3.1.1.RELEASE'])
+    provided (["org.grails:grails-datastore-gorm-plugin-support:${graisDsVer}",
+        "org.grails:grails-datastore-gorm:${graisDsVer}",
+        "org.grails:grails-datastore-core:${graisDsVer}",
+        "org.grails:grails-datastore-web:${graisDsVer}"])
 
     testCompile 'com.googlecode.json-simple:json-simple:1.1.1'
-    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
-
-    testRuntime 'org.grails:grails-datastore-gorm-plugin-support:3.1.1.RELEASE'
-    testRuntime 'org.grails:grails-datastore-gorm:3.1.1.RELEASE'
-    testRuntime 'org.grails:grails-datastore-core:3.1.1.RELEASE'
-    testRuntime 'org.grails:grails-datastore-web:3.1.1.RELEASE'
 }
 
 task wrapper(type: Wrapper) {

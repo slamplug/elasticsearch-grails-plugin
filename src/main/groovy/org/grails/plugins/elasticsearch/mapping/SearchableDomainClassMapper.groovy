@@ -19,9 +19,11 @@ package org.grails.plugins.elasticsearch.mapping
 import grails.core.GrailsApplication
 import grails.core.GrailsDomainClass
 import grails.core.GrailsDomainClassProperty
+import grails.util.GrailsClassUtils
 import org.apache.commons.logging.Log
 import org.apache.commons.logging.LogFactory
 import org.grails.core.DefaultGrailsDomainClass
+import org.grails.core.artefact.DomainClassArtefactHandler
 import org.springframework.util.Assert
 
 import java.lang.reflect.Modifier

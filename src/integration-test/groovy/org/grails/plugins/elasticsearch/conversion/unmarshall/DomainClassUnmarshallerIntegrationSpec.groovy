@@ -1,7 +1,9 @@
 package org.grails.plugins.elasticsearch.conversion.unmarshall
 
-import grails.test.spock.IntegrationSpec
+import grails.test.mixin.integration.Integration
+import spock.lang.Specification
 import grails.core.GrailsApplication
+import grails.transaction.Rollback
 import org.elasticsearch.common.bytes.BytesArray
 import org.elasticsearch.common.text.StringAndBytesText
 import org.elasticsearch.search.internal.InternalSearchHit
@@ -14,7 +16,9 @@ import test.GeoPoint
 import java.lang.reflect.Field
 import java.lang.reflect.Modifier
 
-class DomainClassUnmarshallerIntegrationSpec extends IntegrationSpec {
+@Integration
+@Rollback
+class DomainClassUnmarshallerSpecification extends Specification {
 
     ElasticSearchContextHolder elasticSearchContextHolder
     GrailsApplication grailsApplication

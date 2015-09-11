@@ -1,6 +1,8 @@
 package org.grails.plugins.elasticsearch
 
-import grails.test.spock.IntegrationSpec
+import grails.test.mixin.integration.Integration
+import spock.lang.Specification
+import grails.transaction.Rollback
 import spock.lang.Shared
 import test.Photo
 
@@ -9,7 +11,9 @@ import org.elasticsearch.index.query.FilterBuilders
 import org.elasticsearch.index.query.QueryBuilder
 import org.elasticsearch.index.query.QueryBuilders
 
-class DynamicMethodsIntegrationSpec extends IntegrationSpec {
+@Integration
+@Rollback
+class DynamicMethodsSpecification extends Specification {
 
     def elasticSearchAdminService
     def elasticSearchService

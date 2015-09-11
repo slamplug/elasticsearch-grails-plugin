@@ -1,6 +1,8 @@
 package org.grails.plugins.elasticsearch.mapping
 
-import grails.test.spock.IntegrationSpec
+import grails.test.mixin.integration.Integration
+import spock.lang.Specification
+import grails.transaction.Rollback
 import org.grails.plugins.elasticsearch.ElasticSearchAdminService
 import org.grails.plugins.elasticsearch.exception.MappingException
 import test.mapping.migration.Catalog
@@ -10,7 +12,9 @@ import test.mapping.migration.Item
 /**
  * Created by @marcos-carceles on 07/01/15.
  */
-class MappingMigrationSpec extends IntegrationSpec {
+@Integration
+@Rollback
+class MappingMigrationSpec extends Specification {
 
     def grailsApplication
     def searchableClassMappingConfigurator

@@ -1,6 +1,8 @@
 package org.grails.plugins.elasticsearch.mapping
 
-import grails.test.spock.IntegrationSpec
+import grails.test.mixin.integration.Integration
+import spock.lang.Specification
+import grails.transaction.Rollback
 import spock.lang.Shared
 import spock.lang.Unroll
 import test.Building
@@ -13,7 +15,9 @@ import test.transients.Palette
 /**
  * Created by @marcos-carceles on 28/01/15.
  */
-class ElasticSearchMappingFactorySpec extends IntegrationSpec {
+@Integration
+@Rollback
+class ElasticSearchMappingFactorySpec extends Specification {
 
     @Shared def grailsApplication
     @Shared def searchableClassMappingConfigurator

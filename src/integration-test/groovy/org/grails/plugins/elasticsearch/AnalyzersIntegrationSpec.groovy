@@ -1,14 +1,18 @@
 package org.grails.plugins.elasticsearch
 
-import grails.test.spock.IntegrationSpec
+import grails.test.mixin.integration.Integration
+import grails.transaction.Rollback
 import org.elasticsearch.index.query.QueryBuilders
 import spock.lang.Shared
+import spock.lang.Specification
 import test.all.Post
 
 /**
  * @author <a href='mailto:donbeave@gmail.com'>Alexey Zhokhov</a>
  */
-class AnalyzersIntegrationSpec extends IntegrationSpec {
+@Integration
+@Rollback
+class AnalyzersSpecification extends Specification {
 
     def elasticSearchAdminService
     def elasticSearchService
